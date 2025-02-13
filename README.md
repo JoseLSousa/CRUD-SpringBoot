@@ -21,7 +21,7 @@ modelo de **Produto**.
 ## Pré-requisitos 📍
 
 - **Java 17+**
-- **Maven** instalado em sua máquina(para construir o projeto)
+- **Maven** instalado em sua máquina(para executar o projeto)
 - **IDE** (como IntelliJ ou VS Code) para editar o código (opcional).
 
 ## Como rodar o projeto 🆙⚡
