@@ -2,7 +2,7 @@ package me.dio.spring_api.controllers;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import me.dio.spring_api.dto.PostProdutDTO;
+import me.dio.spring_api.dto.PostProductDTO;
 import me.dio.spring_api.models.Product;
 import me.dio.spring_api.repositories.ProductsRepository;
 import org.springframework.http.HttpStatus;
@@ -32,7 +32,7 @@ public class ProductsController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> postProduct(@RequestBody PostProdutDTO product) {
+    public ResponseEntity<Product> postProduct(@RequestBody PostProductDTO product) {
         Product newProduct = new Product();
         newProduct.setName(product.name());
         newProduct.setDescription(product.description());
@@ -42,7 +42,7 @@ public class ProductsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity putProduct(@PathVariable Integer id, @RequestBody PostProdutDTO productDTO) {
+    public ResponseEntity putProduct(@PathVariable Integer id, @RequestBody PostProductDTO productDTO) {
         Product existingProduct = repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
         existingProduct.setName(productDTO.name());
